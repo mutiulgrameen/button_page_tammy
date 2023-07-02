@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Website</title>
+    <style>
+        #myButton {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+    <div id="message"></div>
+    <script>
+        function handleClick() {
+            var now = new Date();
+            var message = "Button clicked! " + now.toLocaleString();
+            
+            localStorage.setItem("buttonMessage", message);
+            displayMessage();
+        }
+
+        function displayMessage() {
+            var message = localStorage.getItem("buttonMessage");
+            if (message) {
+                document.getElementById("message").textContent = message;
+            }
+
+        document.getElementById('myButton').addEventListener('click', handleClick);
+        displayMessage();    
+
+    </script>
+    
+    
+    
+</body>
+</html>
