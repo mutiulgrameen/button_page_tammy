@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Website</title>
+</head>
+<body>
+    <h1>Button Website</h1>
+    <form action="{{ url_for('button_clicked') }}" method="POST">
+        <button type="submit">Click me!</button>
+    </form>
+    <div id="message">
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
